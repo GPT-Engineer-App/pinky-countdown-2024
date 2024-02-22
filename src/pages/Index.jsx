@@ -34,7 +34,7 @@ const CountDownTimer = ({ targetDate }) => {
   const timerComponents = Object.keys(timeLeft).map((interval) => {
     const value = timeLeft[interval];
     return (
-      <Text key={interval} fontSize="5xl" fontWeight="bold" marginRight={2}>
+      <Text key={interval} fontSize="8xl" fontWeight="bold" marginRight={2}>
         {padWithZero(value)}
       </Text>
     );
@@ -63,23 +63,11 @@ const Index = () => {
 
   return (
     <Box bg={bgColor} minH="100vh">
-      <Container centerContent py="40">
-        <VStack spacing={8}>
-          <VStack>
-            <Text color={color} fontSize="6xl" fontWeight="extrabold" textAlign="center">
-              Countdown to
-            </Text>
-            <Text color={color} fontSize="6xl" fontWeight="extrabold" textAlign="center">
-              April 28th, 2024
-            </Text>
-          </VStack>
-          <Box p={4} shadow="md" borderWidth="1px" borderRadius="md" bg="white">
-            <CountDownTimer targetDate="2024-04-28T00:00:00" />
-          </Box>
-          <Center w="full">
-            <FaClock size="3em" color={color} />
-          </Center>
-        </VStack>
+      <Container centerContent py="20">
+        <CountDownTimer targetDate="2024-04-28T00:00:00" />
+        <Center w="full">
+          <FaClock size="3em" color={color} />
+        </Center>
       </Container>
     </Box>
   );
