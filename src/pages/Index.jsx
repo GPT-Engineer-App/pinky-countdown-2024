@@ -29,27 +29,12 @@ const CountDownTimer = ({ targetDate }) => {
     return () => clearTimeout(timer);
   });
 
-  const timerComponents = (
-    <Table variant="simple">
-      <Thead>
-        <Tr>
-          <Th>Interval</Th>
-          <Th>Time</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {Object.entries(timeLeft).map(([interval, value]) =>
-          value ? (
-            <Tr key={interval} verticalAlign="center">
-              <Td>{interval}</Td>
-              <Td fontSize="3xl" fontWeight="bold">
-                {value}
-              </Td>
-            </Tr>
-          ) : null,
-        )}
-      </Tbody>
-    </Table>
+  const timerComponents = Object.values(timeLeft).map((value) =>
+    value ? (
+      <Text key={value} fontSize="3xl" fontWeight="bold" marginRight={2}>
+        {value}
+      </Text>
+    ) : null,
   );
 
   return (
