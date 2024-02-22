@@ -34,7 +34,7 @@ const CountDownTimer = ({ targetDate }) => {
   const timerComponents = Object.keys(timeLeft).map((interval) => {
     const value = timeLeft[interval];
     return (
-      <Text key={interval} fontSize="8xl" fontWeight="bold" marginRight={2}>
+      <Text key={interval} fontSize="9xl" fontWeight="bold" marginRight={2}>
         {padWithZero(value)}
       </Text>
     );
@@ -46,7 +46,7 @@ const CountDownTimer = ({ targetDate }) => {
         {timerComponents.length
           ? timerComponents.reduce((prev, curr) => [
               prev,
-              <Text fontSize="5xl" fontWeight="bold" mx={2}>
+              <Text fontSize="6xl" fontWeight="bold" mx={2}>
                 :
               </Text>,
               curr,
