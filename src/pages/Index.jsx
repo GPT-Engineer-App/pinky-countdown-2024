@@ -1,4 +1,4 @@
-import { Box, Center, VStack, Text, Heading, useColorModeValue, Container, HStack } from "@chakra-ui/react";
+import { Box, Center, VStack, Text, useColorModeValue, Container, HStack, Table, Thead, Tbody, Tr, Td, Th } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { FaClock } from "react-icons/fa";
 
@@ -29,23 +29,32 @@ const CountDownTimer = ({ targetDate }) => {
     return () => clearTimeout(timer);
   });
 
-  const timerComponents = [];
-
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
-
-    timerComponents.push(
-      <Text key={interval} fontSize="3xl" fontWeight="bold" mx={2}>
-        {timeLeft[interval]} {interval}
-      </Text>,
-    );
-  });
+  const timerComponents = (
+    <Table variant="simple">
+      <Thead>
+        <Tr>
+          <Th>Interval</Th>
+          <Th>Time</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        {Object.entries(timeLeft).map(([interval, value]) =>
+          value ? (
+            <Tr key={interval} verticalAlign="center">
+              <Td>{interval}</Td>
+              <Td fontSize="3xl" fontWeight="bold">
+                {value}
+              </Td>
+            </Tr>
+          ) : null,
+        )}
+      </Tbody>
+    </Table>
+  );
 
   return (
     <Center>
-      <HStack>{timerComponents.length ? timerComponents : <Text>Time's up!</Text>}</HStack>
+      <Center>{timerComponents}</Center>
     </Center>
   );
 };
