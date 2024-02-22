@@ -59,10 +59,10 @@ const Index = () => {
       <Container centerContent py="40">
         <VStack spacing={8}>
           <VStack>
-            <Text color={color} fontSize="4xl" fontWeight="extrabold" textAlign="center">
+            <Text color={color} fontSize="6xl" fontWeight="extrabold" textAlign="center">
               Countdown to
             </Text>
-            <Text color={color} fontSize="4xl" fontWeight="extrabold" textAlign="center">
+            <Text color={color} fontSize="6xl" fontWeight="extrabold" textAlign="center">
               April 28th, 2024
             </Text>
           </VStack>
