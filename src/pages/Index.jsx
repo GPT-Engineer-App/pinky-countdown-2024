@@ -58,7 +58,7 @@ const Index = () => {
     <Box bg={bgColor} minH="100vh">
       <Container centerContent py="40">
         <VStack spacing={8}>
-          <Heading color={color} as="h1" size="2xl">
+          <Heading color={color} as="h1" size="2xl" textAlign="center" letterSpacing="wider" fontWeight="extrabold">
             Countdown to April 28th, 2024
           </Heading>
           <Box p={4} shadow="md" borderWidth="1px" borderRadius="md" bg="white">
