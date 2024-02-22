@@ -66,7 +66,7 @@ const Index = () => {
       <Container centerContent>
         <CountDownTimer targetDate="2024-04-28T00:00:00" />
         <Center w="full">
-          <FaHeart size="6em" color={color} />
+          <FaHeart size="5em" color={color} />
         </Center>
       </Container>
     </Box>
