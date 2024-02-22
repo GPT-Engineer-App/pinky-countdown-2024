@@ -62,8 +62,8 @@ const Index = () => {
   const color = useColorModeValue("pink.800", "pink.100");
 
   return (
-    <Box bg={bgColor} minH="100vh">
-      <Container centerContent py="20">
+    <Box bg={bgColor} minH="100vh" display="flex" alignItems="center" justifyContent="center">
+      <Container centerContent>
         <CountDownTimer targetDate="2024-04-28T00:00:00" />
         <Center w="full">
           <FaClock size="3em" color={color} />
