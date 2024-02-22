@@ -29,13 +29,16 @@ const CountDownTimer = ({ targetDate }) => {
     return () => clearTimeout(timer);
   });
 
-  const timerComponents = Object.values(timeLeft).map((value) =>
-    value ? (
-      <Text key={value} fontSize="3xl" fontWeight="bold" marginRight={2}>
-        {value}
+  const padWithZero = (number) => String(number).padStart(2, "0");
+
+  const timerComponents = Object.keys(timeLeft).map((interval) => {
+    const value = timeLeft[interval];
+    return (
+      <Text key={interval} fontSize="3xl" fontWeight="bold" marginRight={2}>
+        {padWithZero(value)}
       </Text>
-    ) : null,
-  );
+    );
+  });
 
   return (
     <Center>
