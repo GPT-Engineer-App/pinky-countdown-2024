@@ -1,6 +1,6 @@
 import { Box, Center, VStack, Text, useColorModeValue, Container, HStack, Table, Thead, Tbody, Tr, Td, Th } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { FaClock } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 
 const CountDownTimer = ({ targetDate }) => {
   const calculateTimeLeft = () => {
@@ -66,7 +66,7 @@ const Index = () => {
       <Container centerContent>
         <CountDownTimer targetDate="2024-04-28T00:00:00" />
         <Center w="full">
-          <FaClock size="3em" color={color} />
+          <FaHeart size="3em" color={color} />
         </Center>
       </Container>
     </Box>
